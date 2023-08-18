@@ -1,0 +1,153 @@
+<html>
+    <head>
+        <meta name="description" content="Welcome">
+        <meta charset="UTF-8">
+        <title>StringMethods</title>
+        <style>
+            .body
+            {
+                background-color: red;
+            }
+            .cont
+            {
+                justify-content: center;
+                text-align: center;
+                height: 400px;
+                width: 250px;
+                margin: 3px;
+                margin-top: 0px;
+                margin-left: 600px;
+                background-color: palegreen;
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+       <div class="cont">
+        <h1>String Methods</h1>
+        <br> <label for="hlo">String</label>
+         <input type="text" id="hlo" placeholder="enter"><br><br>
+
+         <label for="hlo2">Method</label>
+         <input list="hlo1" id="hlo2" placeholder="select">
+         <datalist id="hlo1">
+            <option value="toUpperCase()"></option>
+            <option value="toLowerCase()"></option>
+            <option value="length"></option>
+            <option value="trim()"></option>
+            <option value="trimStart()"></option>
+            <option value="trimEnd()"></option>
+            <option value="slice()"></option>
+            <option value="substring()"></option>
+            <option value="substr()"></option>
+            <option value="concat()"></option>
+            <option value="padStart()"></option>
+            <option value="padEnd()"></option>
+            <option value="charAt()"></option>
+            <option value="charCodeAt()"></option>
+            <option value="split()"></option>
+         </datalist><br>
+         <br>
+         <button onclick="func()">Submit</button>
+         <button onclick="func1()">Reset</button>
+         <p id="res"></p>
+         <p id="info"></p>
+        </div>
+         <script>
+            function func()
+            {
+                var op=document.getElementById("hlo2").value;
+                var x=document.getElementById("hlo").value;
+                var res;
+                var info="";
+                if(op==="toUpperCase()")
+                { 
+                   res=x.toUpperCase();
+                   info="A string is converted to upper case with toUpperCase()";
+                }
+                else if(op==="toLowerCase()")
+                {
+                   res=x.toLowerCase();
+                   info="A string is converted to lower case with toLowerCase()";
+                }
+                else if(op==="length")
+                {
+                   res=x.length;
+                   info="The length property returns the length of a string";
+                }
+                else if(op==="trim()")
+                {
+                   res=x.trim();
+                   info="The trim() method removes whitespace from both sides of a string";
+                }
+                else if(op==="trimStart()")
+                {
+                   res=x.trimStart();
+                   info="The trimStart() method works like trim(), but removes whitespace only from the start of a string";
+                }
+                else if(op==="trimEnd()")
+                {
+                   res=x.trimEnd();
+                   info="The trimEnd() method works like trim(), but removes whitespace only from the end of a string.";
+                }
+                else if(op==="slice()")
+                {
+                   res=x.slice(0,2);
+                   info="slice() extracts a part of a string and returns the extracted part in a new string....(by default txt.slice(0,2))";
+                }
+                else if(op==="substring()")
+                {
+                   res=x.substring(0,2);
+                   info="substring() is similar to slice().The difference is that start and end values less than 0 are treated as 0 in substring()...by default txt.substring(0,2)";
+                }
+                else if(op==="substr()")
+                {
+                   res=x.substr(0,3);
+                   info="substr() is similar to slice().The difference is that the second parameter specifies the length of the extracted part....by default txt.substring(0,3)";
+                }
+                else if(op==="concat()")
+                {
+                   res=x.concat("",x);
+                   info="concat() joins two or more strings";
+                }
+                else if(op==="padStart()")
+                {
+                   res=x.padStart(4,"0");
+                   info="The padStart() method pads a string from the start.It pads a string with another string (multiple times) until it reaches a given length";
+                }
+                else if(op==="padEnd()")
+                {
+                   res=x.padEnd(4,"0");
+                   info="The padEnd() method pads a string from the end.It pads a string with another string (multiple times) until it reaches a given length.";
+                }
+                else if(op==="charAt()")
+                {
+                   res=x.charAt(1);
+                   info="The charAt() method returns the character at a specified index (position) in a string";
+                }
+                else if(op==="charCodeAt()")
+                {
+                   res=x.charCodeAt(1);
+                   info="The charCodeAt() method returns the unicode of the character at a specified index in a string:The method returns a UTF-16 code (an integer between 0 and 65535).";
+                }
+                else if(op==="split()")
+                {
+                   res=x.split(" ");
+                   info="A string can be converted to an array with the split() method";
+                }
+
+
+                document.getElementById("res").textContent = "Result: " + res;
+                document.getElementById("info").textContent=info;
+                
+            }
+
+            function func1()
+            {
+                  document.getElementById("hlo").value="";
+                  document.getElementById("hlo2").value="";
+            }
+                 
+         </script>
+    </body>
+</html>
